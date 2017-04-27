@@ -14,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.js"></script>
     <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
 
+
     <!-- Custom files -->
     <link rel="stylesheet" href="css/main.css" />
 
@@ -25,47 +26,43 @@
     <h1>World Rank of Colleges</h1>
     <p> Some text shoul go here that better explains the data set
 
+        <br>
+        <br>
+        <label class="radio-inline"><input type="radio" name="optradio" class='region' value='North America' checked>North America</label>
+        <label class="radio-inline"><input type="radio" name="optradio" class='region' value='South America'>South America</label>
+        <label class="radio-inline"><input type="radio" name="optradio" class='region' value='Europe'>Europe</label>
+        <label class="radio-inline"><input type="radio" name="optradio" class='region' value='Middle East'>Middle East</label>
+        <label class="radio-inline"><input type="radio" name="optradio" class='region' value='Asia'>Asia</label>
+        <label class="radio-inline"><input type="radio" name="optradio" class='region' value='Australasia'>Australasia</label>
+        <label class="radio-inline"><input type="radio" name="optradio" class='region' value='Northern Africa'>Northern Africa</label>
+        <label class="radio-inline"><input type="radio" name="optradio" class='region' value='Southern Africa'>Southern Africa</label>
 
-
-        <div class="dropdown btn-group">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Region
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                <li role="presentation"><a role="menuitem" tabindex="-1" value='North America'>North America</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" value='South America'>South America</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" value='Europe'>Europe</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" value='Middle East'>Middle East</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" value='Asia'>Asia</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" value='Australasia'>Australasia</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" value='Northern Africa'>Northern Africa</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" value='North America'>Southern Africa</a></li>
-            </ul>
-        </div>
-
-        <div class="dropdown btn-group">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Year
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                <li role="presentation"><a role="menuitem" tabindex="-1" value='2011'>2011</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" value='2012'>2012</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" value='2013'>2013</a></li>
-            </ul>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary">
+		    <input value = "2011" type="radio" name="options" id="option1" class= 'year' autocomplete="off">2011
+		</label>
+            <label class="btn btn-primary active">
+		    <input value = "2012" type="radio" name="options" id="option2" class= 'year' autocomplete="off">2012 
+		</label>
+            <label class="btn btn-primary active">
+		    <input value = "2013" type="radio" name="options" id="option2" class= 'year' autocomplete="off" checked>2013
+		</label>
         </div>
 
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-		    <input value = "any" type="radio" name="options" id="option1" autocomplete="off">Metric One 
+		    <input value = "research" type="radio" name="options" id="option1" class= 'measure' autocomplete="off">Research
 		</label>
             <label class="btn btn-primary active">
-		    <input value = "binge" type="radio" name="options" id="option2" autocomplete="off" checked>Metric Two 
+		    <input value = "teaching" type="radio" name="options" id="option2" class= 'measure' autocomplete="off" >Teaching
 		</label>
             <label class="btn btn-primary active">
-		    <input value = "binge" type="radio" name="options" id="option2" autocomplete="off" checked>Metric Three
+		    <input value = "citations" type="radio" name="options" id="option2" class= 'measure' autocomplete="off" checked>Citations
 		</label>
         </div>
 
 
-        <h2>U.S. State Drinking Patterns in 2012</h2>
+        <h2>World College Ranks</h2>
 
         <div id="vis"></div>
 </body>
