@@ -24,7 +24,9 @@
 
 <body class="container">
     <h1>World Rank of Colleges</h1>
-    <p> Some text shoul go here that better explains the data set
+    <p> Below is a visualization which measures the overall score of a university against three metrics which are used to compose this score. 
+        The data was retrieved from the Times Higher Education organization. To learn more about how each metric was generated please visit their website.
+        <a href="https://www.timeshighereducation.com/news/ranking-methodology-2016#survey-answer">World University Rankings 2015-2016 methodology</a>
 
         <br>
         <br>
@@ -38,33 +40,47 @@
         <label class="radio-inline"><input type="radio" name="optradio" class='region' value='Southern Africa'>Southern Africa</label>
 
         <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-primary">
-		    <input value = "2011" type="radio" name="options" id="option1" class= 'year' autocomplete="off">2011
-		</label>
             <label class="btn btn-primary active">
+		    <input  value = "2011" type="radio" name="options" id="option1" class= 'year' autocomplete="off" checked>2011
+		</label>
+            <label class="btn btn-primary">
 		    <input value = "2012" type="radio" name="options" id="option2" class= 'year' autocomplete="off">2012 
 		</label>
-            <label class="btn btn-primary active">
-		    <input value = "2013" type="radio" name="options" id="option2" class= 'year' autocomplete="off" checked>2013
+            <label class="btn btn-primary">
+		    <input value = "2013"  type='radio' name="options" id="option3" class= 'year' autocomplete="off">2013
 		</label>
         </div>
 
         <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-primary">
-		    <input value = "research" type="radio" name="options" id="option1" class= 'measure' autocomplete="off">Research
-		</label>
             <label class="btn btn-primary active">
+		    <input value = "research" type="radio" name="options" id="option1" class= 'measure' autocomplete="off" checked>Research
+		</label>
+            <label class="btn btn-primary">
 		    <input value = "teaching" type="radio" name="options" id="option2" class= 'measure' autocomplete="off" >Teaching
 		</label>
-            <label class="btn btn-primary active">
-		    <input value = "citations" type="radio" name="options" id="option2" class= 'measure' autocomplete="off" checked>Citations
+            <label class="btn btn-primary">
+		    <input value = "citations" type="radio" name="options" id="option3" class= 'measure' autocomplete="off" >Citations
 		</label>
         </div>
 
-
-        <h2>World College Ranks</h2>
-
+        <h2>World College Metric Evaluations</h2>
         <div id="vis"></div>
+        <div>
+            <p> The provided visualization allows a user to see the relationship between a university's overall score and a specific metric
+                 that is used to compute that score.  As such, the graph helps illuminate the weight of each of these metrics. For example, 
+                 if a university has a low total score but a high research score, then the user can infer that not much weight is placed on
+                  the university's research score  when generating the total score. To encode the data, I choose to use position on a common 
+                  scale (e.g. the overall score) with a scatter plot. To further express the data, I created a tool tip so that when a user 
+                  hovers their mouse over a data point, they see the name and rank of the university. I choose a scatter plot rather than a 
+                  bar chart to allow users to see a trends within the data set (e.g the higher the individual metric score the higher the overall score)</p>
+            <p> To increase the effectiveness of the visualization I broke up the data into regions based on the location of the university. As such the 
+                user can see how the scores change between each region as well as the density of schools in each region. With this selector a user may 
+                infer that there is bias to European and North American schools, since there are very few schools in other regions. Users may also select
+                 the year in which the data was collected. This will allow the user to see how the data changes, or remains constant, over the three year 
+                 period. Again they may infer that with a low variance between these scores that there is a certain bias for the more prestigious schools 
+                 (i.e Oxford and Harvard)  to continue to place in the top ten ranking. Final, the user may select which metric they wish to compare against 
+                 the total score. As previously mentioned the user can see how each metric is weighted in the composite metric, total score. </p>
+        </div>
 </body>
 
 </html>

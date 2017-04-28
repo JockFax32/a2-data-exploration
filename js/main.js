@@ -55,11 +55,12 @@ $(function () {
             // console.log(currentData)
         }
 
-        var color = function(rank) {
-            var color
-            rank <= 100 ? color = 'red' : color = 'blue'
-            return color
-        }
+        // var color = function(rank) {
+        //     rank = parseInt(rank)
+        //     var color
+        //     rank <= 100 ? color = 'red' : color = 'blue'
+        //     return color
+        // }
 
         /* ****** Create custom Scales ****** */
         var setScales = function(data) {
@@ -82,8 +83,6 @@ $(function () {
             yScale = d3.scaleLinear()
                 .range([height, 0])
                 .domain([0, yMax])
-
-
         }
 
         /* ****** Set Axes ****** */
@@ -107,7 +106,7 @@ $(function () {
             .attr('class', 'd3-tip')
             .offset([-10, 0])
             .html(function(d) {
-                return d.university_name + "</br></br>" + 'World Rankd: ' + d.world_rank;
+                return d.university_name + "</br></br>" + 'World Rank: ' + d.world_rank;
             })
         svg.call(tip);
 
@@ -121,28 +120,20 @@ $(function () {
 
             circles.enter()
                 .append('circle')
-                .merge(circles)
                 .attr('r', 10)
-                .attr('fill', function(d) {return color(+d.world_rank)})
+                // .attr('fill', function(d) {return color(+d.world_rank)})
+                .attr('fill', 'blue')
                 .style('opacity', .3)
                 .attr('cx', function(d) {return xScale(+d.total_score)})
                 .attr('cy', function(d) {return yScale(d[measure])})
-                .attr('class', 'my_circle')
-                // .on('mouseover', tip.show)
-                // .on('mouseout', tip.hide)
-            
-            
-            // circles.transition()
-            //     .duration(1500)
-            //     .delay(function(d, i) {
-            //         return i * 50;
-            //     })
-            //     .attr('height', function(d) {
-            //         return height - yScale(d[measure]);
-            //     })
-            //     .attr('y', function(d) {
-            //         return yScale(d[measure]);
-            //     });
+                .attr('class', 'circle')
+                // .merge(circles)
+                .on('mouseover', tip.show)
+                .on('mouseout', tip.hide)
+                .merge(circles)
+                .transition()
+                .duration(1500)
+                .delay(function(d) {return d * 15})
             
             circles.exit().remove()
         }
